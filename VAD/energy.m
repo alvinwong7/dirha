@@ -1,6 +1,5 @@
-function energy
+function speech = energy(audio)
 % Energy-based VAD
 % by Alvin Wong z5076152
-disp('ENERGY')
-
+speech = sum(abs(fft(audio)).^2)/numel(audio);
 end
