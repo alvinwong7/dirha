@@ -12,7 +12,6 @@ while (x < 0 || x > 4)
     x = input(prompt);
 end
 
-% --------------------------- INITIALISATION ---------------------------
 % Initialisation of threshold levels
 switch x
     case 1
@@ -29,23 +28,21 @@ end
 deviceReader = audioDeviceReader;
 setup(deviceReader);
 
-% ---------------------------
 while 1
     audio = deviceReader();
     switch x
         case 1
-            val = energy(audio);
+            if energy(audio) > threshold
+                if debug == 1
+                    disp('speech')
+                end
+            end
         case 2
-            val = spectral(audio);
+            spectral();
         case 3
             cepstral();
         case 4
             harmonicity();
-    end
-    if val > threshold
-       if debug == 1
-           disp('speech')
-       end
     end
 end
 

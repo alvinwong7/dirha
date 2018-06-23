@@ -1,6 +1,6 @@
-function spectral
-% spectral-domain VAD
+function speech = spectral(audio)
+% Spectral-domain VAD
 % by Alvin Wong z5076152
-disp('SPECTRAL')
+speech = abs(fft(audio))
 
 end
