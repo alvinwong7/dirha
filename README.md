@@ -1,3 +1,3 @@
-# thesis
+# Speech Recognition
 
-Just some code I wrote for my thesis
+Some code I wrote for my thesis.
